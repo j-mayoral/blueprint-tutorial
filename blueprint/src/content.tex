@@ -1,0 +1,32 @@
+% In this file you should put the actual content of the blueprint.
+% It will be used both by the web and the print version.
+% It should *not* include the \begin{document}
+%
+% If you want to split the blueprint content into several files then
+% the current file can be a simple sequence of \input. Otherwise It
+% can start with a \section or \chapter for instance.
+
+\begin{definition}[Sum until]
+  \label{def:sum_until}
+  \lean{sum_until}
+  For every natural number $n \in \mathbb{N}$, we define
+  \[
+    \mathrm{sum\_until}(n) = \sum_{k = 0}^{n} k.
+  \]
+\end{definition}
+
+\begin{theorem}[Sum of the first $n$ natural numbers]
+  \label{thm:sum_nats}
+  \lean{sum_first_natural_numbers}
+  \leanok
+  \uses{def:sum_until}
+  For every $n \in \mathbb{N}$,
+  \[
+    \mathrm{sum\_until}(n) = \frac{n(n+1)}{2}.
+  \]
+\end{theorem}
+
+\begin{proof}
+  \leanok
+  This follows from a straightforward induction on $n$.
+\end{proof}
